@@ -1,0 +1,105 @@
+<!--
+1. Crie um arquivo chamado index.html e monte nele a seguinte estrutura usando sempre tags semânticas:
+- Um <header> contendo um <h1> (título) e um <p> (parágrafo) introdutório.
+- Um <main> dividido em duas subseções:
+- Seção “Missão” com <h2> e <p>.
+- Seção “Visão” com <h2> e <p>.
+- Um <footer> com um <p> de copyright.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercicio_01</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Dev Full Stack Jr. - MaisPraTI</h1>
+    <p>Este curso oferece uma experiência aprofundada em dois elementos essenciais do desenvolvimento web: front-end e back-end, proporcionando aos participantes as habilidades necessárias para criar aplicações web completas e funcionais.</p>
+
+    <button id="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+  </header>
+
+  <nav id="nav-menu" class="sidebar">
+    <button id="menu-close" aria-label="Fechar menu">&times;</button>
+    <ul>
+      <li><a href="#missao">Missão</a></li>
+      <li><a href="#visao">Visão</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="missao">
+      <h2>Missão</h2>
+      <p class="destaque">O diferencial desta jornada educacional está na sua abordagem prática e envolvente, a qual permite que participantes compreendam os conceitos, e os apliquem de maneira eficaz.</p>
+    </section>
+
+    <section id="visao">
+      <h2>Visão</h2>
+      <p id="importante">Ao final da jornada, os 100 melhores alunos serão recomendados para preencher as vagas de Desenvolvimento Júnior disponíveis nas empresas mantenedoras da +praTi.</p>
+    </section>
+  </main>
+
+  <section class="galeria-container" id="galeria">
+    <div class="galeria">
+      <figure>
+        <img src="cachorro1.jpg" alt="Cachorrinho 1" />
+        <figcaption>Cachorrinho 1</figcaption>
+      </figure>
+      <figure>
+        <img src="cachorro2.jpg" alt="Cachorrinho 2" />
+        <figcaption>Cachorrinho 2</figcaption>
+      </figure>
+      <figure>
+        <img src="cachorro3.jpg" alt="Cachorrinho 3" />
+        <figcaption>Cachorrinho 3</figcaption>
+      </figure>
+      <figure>
+        <img src="cachorro4.jpg" alt="Cachorrinho 4" />
+        <figcaption>Cachorrinho 4</figcaption>
+      </figure>
+      <figure>
+        <img src="cachorro5.jpg" alt="Cachorrinho 5" />
+        <figcaption>Cachorrinho 5</figcaption>
+      </figure>
+      <figure>
+        <img src="cachorro6.jpg" alt="Cachorrinho 6" />
+        <figcaption>Cachorrinho 6</figcaption>
+      </figure>
+      <figure>
+        <img src="cachorro7.jpg" alt="Cachorrinho 7" />
+        <figcaption>Cachorrinho 7</figcaption>
+      </figure>
+      <figure>
+        <img src="cachorro8.jpg" alt="Cachorrinho 8" />
+        <figcaption>Cachorrinho 8</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Codifica. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const sidebar = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.add('show');
+    });
+
+    menuClose.addEventListener('click', () => {
+      sidebar.classList.remove('show');
+    });
+  </script>
+
+</body>
+</html>
+

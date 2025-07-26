@@ -1,0 +1,199 @@
+/*
+4. CSS Básico e Box Model - Crie um arquivo styles.css e vincule-o em index.html:
+- Defina cores de fundo (background-color) e de texto (color) para <header>, <main> e <footer>.
+- Para cada uma dessas seções, aplique margin, padding e border de forma a
+evidenciar seus contornos.
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #ffc0cb;
+  color: #4a004e;
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid #d63384;
+  border-radius: 8px;
+  position: relative;
+}
+
+h2 {
+  font-size: 1.8em;
+  text-decoration: underline;
+  color: #d63384;
+  margin-bottom: 10px;
+}
+
+.destaque {
+  font-style: italic;
+  background-color: rgba(255, 182, 193, 0.2);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#importante {
+  border-top: 4px solid #ff1493;
+  padding-top: 10px;
+}
+
+main {
+  background-color: #ffe6ee;
+  color: #333;
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid #ff99c8;
+  border-radius: 8px;
+}
+
+footer {
+  background-color: #ffccde;
+  color: #4a004e;
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid #e75480;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.galeria-container {
+  display: flex;
+  justify-content: center;
+  padding: 30px 20px;
+  flex-wrap: wrap;
+  background-color: #fff0f5;
+  border: 2px solid #ffb6c1;
+  margin: 20px;
+  border-radius: 8px;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.galeria figure {
+  margin: 0;
+  text-align: center;
+  background-color: #ffeef4;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.galeria figure:hover {
+  transform: scale(1.05);
+}
+
+.galeria img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+@media (max-width: 1024px) {
+  .galeria {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .galeria {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .galeria {
+    grid-template-columns: 1fr;
+  }
+}
+
+#menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #4a004e;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1100;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100vh;
+  background-color: #ffe6ee;
+  padding: 30px 20px;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+  transition: left 0.3s ease;
+  z-index: 1050;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.show {
+  left: 0;
+}
+
+#menu-close {
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: #4a004e;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #4a004e;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+@media (max-width: 600px) {
+  nav:not(.sidebar) ul {
+    display: none;
+  }
+  #menu-toggle {
+    display: block;
+  }
+}
+
+@media (min-width: 601px) {
+  .sidebar {
+    display: none !important;
+  }
+  #menu-toggle {
+    display: none;
+  }
+  nav ul {
+    display: flex !important;
+    gap: 20px;
+    padding: 10px 0;
+  }
+}
